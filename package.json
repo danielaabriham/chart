@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel server index.html",
+    "cy:open": "cypress open",
+    "dev": "start-test 1234 cy:open"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cypress": "^9.4.1",
     "frappe-charts": "^1.6.2"
+  },
+  "devDependencies": {
+    "start-server-and-test": "^1.14.0"
   }
 }
