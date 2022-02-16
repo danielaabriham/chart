@@ -1,3 +1,5 @@
 {
-    "projectId": "bkfokj"
+    "projectId": "bkfokj",
+    "baseUrl": "http://localhost:1234",
+    "viewportHeight": 400
 }
