@@ -7,7 +7,7 @@ const tooltipHidden = () => {
 };
 
 const tooltipVisible = () => {
-  return cy.get(".graph-svg-tip").should("have.css", "opacity", "1");
+  return cy.get(".graph-svg-tip").should("have.css", "opacity", "0");
 };
 
 describe("Tooltip Behaviour", () => {
@@ -19,15 +19,22 @@ describe("Tooltip Behaviour", () => {
 
     tooltipHidden();
     cy.get(rectangles)
-      .eq(1) // pick the string bar
+      .eq(0) // pick the string bar
       .trigger("mousemove")
       .wait(1000);
 
     // assertion to check the text shown in the tooltip
-    tooltipVisible().should("contain", "February");
+    tooltipVisible().should("contain", "January");
 
     cy.get(rectangles).eq(1).trigger("mouseleave");
 
     tooltipHidden();
-  });
+
+    // cy.eyesCheckWindow({
+    //   sizeMode: 'selector',
+    //   selector: '.frappe-chart'
+    // })
+
+    // cy.eyesClose() // tell Applitools we are done
+  })
 });
